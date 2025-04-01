@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>student_info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <style>
+        .myTable { 
+            width: 40%;
+            text-align: left;
+            background-color: lemonchiffon;
+            border-collapse: collapse; 
+        }
+        .myTable th { 
+            background-color: lightblue;
+            color: red; 
+        }
+        .myTable td, 
+        .myTable th { 
+            padding: 10px;
+            border: 2px solid goldenrod; 
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center">Summary of Student Info</h3>
+
+    <table align="center" class="myTable">
+        <tr>
+            <th>student_name</th>
+            <th>reg_no</th>
+            <th>branch</th>
+            <th>year</th>
+        </tr>
+
+        {% for entry in stud %}
+        <tr>
+            <td align="center">{{ entry.student_name }}</td>
+            <td align="center">{{ entry.reg_no }}</td>
+            <td align="center">{{ entry.branch }}</td>
+            <td align="center">{{ entry.year }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

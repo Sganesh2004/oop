@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+</head>
+<body>
+    <h1>Create a New Student</h1>
+    {% if created %}
+        <p>Student created successfully! Here are the details:</p>
+        <p>Name: {{ object.student_name }}</p>
+        <p>Registration Number: {{ object.reg_no }}</p>
+        <p>Branch: {{ object.branch }}</p>
+        <p>Year: {{ object.year }}</p>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="student_name">Name:</label><br>
+            <input type="text" id="student_name" name="student_name" required><br><br>
+            <label for="reg_no">Registration Number:</label><br>
+            <input type="text" id="reg_no" name="reg_no" required><br><br>
+            <label for="branch">Branch:</label><br>
+            <input type="text" id="branch" name="branch" required><br><br>
+            <label for="year">Year:</label><br>
+            <input type="text" id="year" name="year" required><br><br>
+            <button type="submit">Create Student</button>
+        </form>
+    {% endif %}
+</body>
+</html>
